@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Todo List</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Todo List</h1>
+    <form action="/addTask" method="POST" class="mb-3"  onsubmit="return validateTask()">
+      <div class="input-group">
+        <input type="text" name="task" id= "taskInput" class="form-control" placeholder="Enter a task">
+        <div class="input-group-append">
+          <button type="submit" class="btn btn-primary">Add Task</button>
+        </div>
+      </div>
+    </form>
+    <ul class="list-group">
+      <% tasks.forEach((task, index) => { %>
+        <li class="list-group-item d-flex justify-content-between">
+          <%= task %>
+          <form action="/deleteTask" method="POST" class="d-inline">
+            <input type="hidden" name="index" value="<%= index %>">
+            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+          </form>
+        </li>
+      <% }); %>
+    </ul>
+
+  </div>
+  <script>
+    function validateTask() {
+      var taskInput = document.getElementById("taskInput");
+      var taskValue = taskInput.value.trim();
+      if (taskValue === "") {
+        alert("Please enter a task.");
+        taskInput.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</body>
+</html>
