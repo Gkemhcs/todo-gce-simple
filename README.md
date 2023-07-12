@@ -1,4 +1,16 @@
 # todo-gce-simple
 A SIMPLE TODO WEBSITE DEPLOYED ON GOOGLE COMPUTE ENGINE AND ACCESSIBLE THROUGH BROWSER ON PORT 80
 # TODO-WEBSITE
-
+## DESCRIPTION:-
+    THIS IS A SIMPLE NODEJS TODO APP RUNNING ON GCE INSTANCE WITH NGINX SERVER WHICH CAN BE ACCESSIBLE THROUGH  PORT 80
+## STEPS TO DEPLOY :
+   CLONE THIS REPO TO YOUR WORKSTATION 
+   ```bash
+  git clone https://github.com/Gkemhcs/todo-gce-simple.git
+  cd todo-gce-simple.git
+   ```
+  RUN THE DEPLOY SCRIPT
+   ```bash
+   chmod +x setup.sh
+   ./setup.sh
+   ```
